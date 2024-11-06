@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Tejas Mali - Web Developer</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Tejas Mali, a passionate web developer with experience in creating educational platforms and optimizing for user experience and SEO. Let's connect to bring your ideas to life.">
+    
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="Tejas Mali, Web Developer, SEO Specialist, Educational Website, Fundamental Academy, Website Optimization, Beginner Web Development, HTML, CSS, JavaScript, Responsive Design, Web Development Services, Affordable Websites, Digital Presence, Surat Web Development, Student Learning Platforms, Online Education, Custom Websites">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Tejas Mali - Web Developer">
+    <meta property="og:description" content="Explore the portfolio of Tejas Mali, a dedicated web developer specializing in SEO-optimized educational platforms.">
+    <meta property="og:url" content="https://devloper.fundamentalacademy.in/">
+    <meta property="og:image" content="/favicon_io/favicon.ico">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tejas Mali",
+        "url": "https://devloper.fundamentalacademy.in/",
+        "image": "/favicon_io/favicon.ico",
+        "sameAs": [
+            "https://github.com/tejasmali07",
+            "mailto:malitejas28@gmail.com",
+            "https://wa.me/919327338905",
+            "https://www.snapchat.com/add/tejazmali",
+            "https://instagram.com/tejasmali__"
+        ],
+        "jobTitle": "Web Developer",
+        "description": "Tejas Mali is a passionate web developer specializing in SEO-optimized educational platforms.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Surat",
+            "addressCountry": "India"
+        },
+        "sameAs": [
+            "https://github.com/tejasmali07",
+            "mailto:malitejas28@gmail.com",
+            "https://wa.me/919327338905",
+            "https://www.snapchat.com/add/tejazmali",
+            "https://instagram.com/tejasmali__"
+        ]
+    }
+    </script>
+    
+</head>
+<body>
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+            -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+            outline: none !important;
+        }
+    </style>
+  <div class="loader-overlay">
+    <div class="loader"></div>
+  </div>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="hero-text"> Hi, I'm Tejas Mali</h1>
+            <p>A Passionate Web Developer Focused on All Aspects of Development.</p>
+            <a href="#contact" class="cta-button">Contact Me</a>
+        </div>
+    </header>
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I'm a student of Automation and Robotics with a passion for web development. I’ve already built <a href="https://fundamentalacademy.in" target="_blank">Fundamental Academy</a>, an educational platform for students. My goal is to blend my technical skills in automation with web development to create innovative, user-focused solutions.</p>
+    </section>
+    
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <p>Developed the educational site <a href="https://fundamentalacademy.in" target="_blank">Fundamental Academy</a>, providing study materials and optimizing the site for better user experience and local SEO in Surat.</p>
+    </section>
+    <section id="contact" class="section">
+        <div class="contact-container">
+            <!-- Left Side Photo Section -->
+            <div class="contact-image">
+                <!-- Image goes here as a background in CSS -->
+            </div>
+    
+            <!-- Right Side Form Section -->
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <p>Let's connect! Fill out the form below to reach out to me directly.</p>
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="72e41e2f-837f-4acf-aa31-4bd9c11589a4">
+                    
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div id="formMessage" style="display: none;"></div>
+    </section>
+    
+    <!-- CSS for Button Animation -->
+    <style>
+        .submit-button {
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            position: relative;
+            background-color: #e5533e;
+            color: transparent;
+            pointer-events: none;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 5px solid #fff;
+            border-top: 5px solid #ff6347;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            transform: translate(-50%, -50%);
+        }
+    
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+    
+    <!-- JavaScript for handling form submission with animation -->
+    <script>
+
+
+
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const form = event.target;
+            const formData = new FormData(form);
+            const formMessage = document.getElementById('formMessage');
+            const submitButton = form.querySelector('.submit-button');
+    
+            // Add loading animation to button
+            submitButton.classList.add('loading');
+    
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+    
+                if (response.ok) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'green';
+                    formMessage.textContent = 'Your message has been sent successfully!';
+                    form.reset(); // Reset the form after successful submission
+                } else {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'red';
+                    formMessage.textContent = 'Oops! There was a problem sending your message.';
+                }
+            } catch (error) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = 'red';
+                formMessage.textContent = 'An error occurred. Please try again later.';
+            } finally {
+                // Remove loading animation from button
+                submitButton.classList.remove('loading');
+            }
+        });
+    </script>
+    
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/tejasmali07" target="_blank" aria-label="GitHub">
+            <img src="images/github.svg" alt="GitHub">
+        </a>
+        <a href="mailto:malitejas28@gmail.com" target="_blank" aria-label="Email">
+            <img src="images/envelope-regular.svg" alt="Email">
+        </a>
+        <a href="https://wa.me/91932733805" target="_blank" aria-label="WhatsApp">
+            <img src="images/whatsapp (2).svg" alt="WhatsApp">
+        </a>
+       
+        </a>
+        <a href="https://instagram.com/tejasmali__" target="_blank" aria-label="Instagram">
+            <img src="images/instagram (1).svg" alt="Instagram">
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Tejas Mali. All rights reserved.</p>
+    </footer>
+  <script>
+  // Wait until the entire page has loaded
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    document.getElementById('content').style.display = 'block';
+  });
+</script>
+
+
+
+</body>
+</html>
