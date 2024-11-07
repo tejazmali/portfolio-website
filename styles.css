@@ -292,7 +292,7 @@ h2 {
     center/cover no-repeat;
   background-color: #ff6347c5;
   filter: drop-shadow(
-    5px 5px 15px rgba(0, 0, 0, 0.275)
+    5px 5px 15px rgba(0, 0, 0, 0.112)
   ); /* Drop shadow effect */
   border-radius: 10px 0 0 10px;
 }
