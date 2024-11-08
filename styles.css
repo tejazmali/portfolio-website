@@ -17,7 +17,7 @@ body {
 }
 /* Thin scrollbar */
 body::-webkit-scrollbar {
-  width: 4px; /* Thin width */
+  width: 6px; /* Thin width */
 }
 
 /* Scrollbar track */
