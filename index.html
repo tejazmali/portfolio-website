@@ -69,8 +69,18 @@
     <div class="loader-overlay">
         <div class="loader"></div>
     </div>
+   <!-- Navbar with active class on Home link -->
+<nav class="navbar">
+    <ul>
+        <li><a href="#header" class="nav-link active" data-target="header">Home</a></li>
+        <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+        <li><a href="#experience" class="nav-link" data-target="experience">Experience</a></li>
+        <li><a href="#what-i-use" class="nav-link" data-target="what-i-use">Skills</a></li>
+        <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+    </ul>
+</nav>
     <!-- Header Section -->
-    <header class="header">
+    <header id="header" class="header">
         <div class="header-content">
             <h1 class="hero-text"> Hi, I'm Tejas Mali</h1>
             <p>A Passionate Web Developer Focused on All Aspects of Development.</p>
@@ -89,7 +99,7 @@
     </section>
 
 
-    <!-- Experience Section -->
+    <!-- Experience Sectiacon -->
     <section id="experience" class="section">
         <h2>Experience</h2>
         <p>Developed the educational site <a href="https://fundamentalacademy.in" target="_blank">Fundamental
@@ -97,8 +107,8 @@
             in Surat.</p>
     </section>
     <!-- What I Use Section -->
-    <section id="what-i-use">
-        <h2>What I Use</h2>
+    <section id="what-i-use" class="section">
+        <h2>Skills</h2>
         <p>Here are some of the programming languages I use to build websites.</p>
 
         <ul class="tools-container">
@@ -190,6 +200,44 @@
             }
         }
     </style>
+    <!-- JavaScript to Handle Scroll and Active Section -->
+    <script>
+    // JavaScript to Handle Scroll and Active Section
+const navbar = document.querySelector('.navbar');
+const header = document.getElementById('header');
+
+// Detect sections and links
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Scroll listener to update active link and navbar transparency
+window.addEventListener('scroll', () => {
+    // Toggle navbar background on scroll
+    if (window.scrollY > header.offsetHeight) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    // Highlight active section in navbar
+    let current = 'header'; // Default to "Home" section
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-target') === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+    </script>
 
     <!-- JavaScript for handling form submission with animation -->
     <script>
