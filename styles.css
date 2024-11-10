@@ -108,7 +108,7 @@ body::-webkit-scrollbar-thumb:hover {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 8px solid rgb(212, 223, 227);
+  border: 5px solid rgb(212, 223, 227);
   border-right-color: #ff6347;
   animation: spin 1s infinite linear;
   margin-left: 50px;
