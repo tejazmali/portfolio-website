@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas Mali - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#header" class="nav-link" data-target="header">Home</a></li>
+            <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+            <li><a href="#experience" class="nav-link" data-target="experience">Experience</a></li>
+            <li><a href="#what-i-use" class="nav-link" data-target="what-i-use">What I Use</a></li>
+            <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sections (Example Content) -->
+    <header id="header" class="section">...</header>
+    <section id="about" class="section">...</section>
+    <section id="experience" class="section">...</section>
+    <section id="what-i-use" class="section">...</section>
+    <section id="contact" class="section">...</section>
+
+    <!-- JavaScript to Handle Scroll and Active Section -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const header = document.getElementById('header');
+
+        // Detect sections and links
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Scroll listener to update active link and navbar transparency
+        window.addEventListener('scroll', () => {
+            // Toggle navbar background on scroll
+            if (window.scrollY > header.offsetHeight) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Highlight active section in navbar
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- CSS for Navigation and Active Link -->
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1em;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+            background-color: transparent; /* Transparent by default */
+        }
+
+        /* Background color for navbar when scrolled */
+        .navbar.scrolled {
+            background-color: rgba(51, 51, 51, 0.9); /* Dark background when scrolled */
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em;
+            transition: color 0.3s;
+        }
+
+        /* Active Link Styling */
+        .navbar a.active {
+            color: #ff6347; /* Highlight color */
+        }
+
+        /* Section Styling */
+        .section {
+            height: 100vh;
+            padding: 50px;
+            color: #333;
+        }
+
+        #header { background-color: #e3f2fd; }
+        #about { background-color: #fff3e0; }
+        #experience { background-color: #f3e5f5; }
+        #what-i-use { background-color: #e8f5e9; }
+        #contact { background-color: #ffebee; }
+    </style>
+</body>
+</html>
