@@ -267,7 +267,10 @@ h2 {
 
 .section p {
   font-size: 1.1rem;
-  margin: 10px 0;
+margin: 10px auto; /* Center horizontally */
+line-height: 1.6;
+width: 90%;
+
 }
 
 /* Link Styling */
