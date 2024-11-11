@@ -270,7 +270,10 @@ h2 {
 margin: 10px auto; /* Center horizontally */
 line-height: 1.6;
 width: 90%;
-
+@media (max-width: 600px){
+  width: 100%;
+  line-height: 1.5;
+}
 }
 
 /* Link Styling */
