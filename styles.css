@@ -523,8 +523,7 @@ width: 90%;
   transform: scale(1.1);
 }
 
-.social-sidebar img {
-  width: 24px;
+.social-sidebar img {  width: 24px;
   height: 24px;
 }
 
@@ -572,6 +571,20 @@ footer {
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
+.badge-container {
+  margin-top: 0.7rem;
+  margin-top: 30px;
+   h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+   }
+}
+
+.badges img {
+  margin: 0.1rem;
+  border-radius: 5px;
+}
+
 .tools-container {
   display: flex;
   justify-content: center;
