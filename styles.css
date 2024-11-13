@@ -516,7 +516,7 @@ width: 90%;
 }
 
 .social-sidebar a {
-  background-color: #202020cd;
+  background-color: rgba(51, 51, 51, 0.9);
   border-radius: 10px;
   padding: 10px;
   display: flex;
