@@ -393,6 +393,7 @@ width: 90%;
   margin-bottom: 10px;
   transition: border-color 0.3s ease;
   background-color: #f5f5f5;
+  resize: none!important;
 }
 
 .contact-form input:focus,
@@ -491,6 +492,7 @@ width: 90%;
     font-size: 0.9rem; /* Slightly smaller font size on mobile */
     padding: 12px; /* Reduced padding for input fields */
     background-color: #f5f5f5;
+    resize: none;
   }
 
   .submit-button {
