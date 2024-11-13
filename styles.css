@@ -516,7 +516,7 @@ width: 90%;
 }
 
 .social-sidebar a {
-  background-color: #202020;
+  background-color: #202020cd;
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -590,8 +590,8 @@ footer {
 }
 
 .badges img {
-  margin: 0.1rem;
-  border-radius: 5px;
+
+  border-radius: 3px;
 }
 
 .tools-container {
