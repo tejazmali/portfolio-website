@@ -229,6 +229,7 @@ h2 {
   transform: translate(-50%, 0); /* Center the text */
   position: absolute; /* Position in the center */
   left: 50%; /* Start from the middle */
+  
 }
 
 @keyframes typing {
