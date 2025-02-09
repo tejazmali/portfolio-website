@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta name="google-site-verification" content="J51TCtyYzza0m-GDzCJUnKRyn61OtV7l_uNQJaGDx-k" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Tejas Mali - Web Developer</title>
@@ -14,7 +13,7 @@
     <!-- Keywords for SEO -->
     <meta name="keywords"
         content="Tejas Mali, Web Developer,Tejas Portfolio, Portfolio, SEO Specialist, Educational Website, Website Optimization, Beginner Web Development, HTML, CSS, JavaScript, Responsive Design, Web Development Services, Affordable Websites, Digital Presence, Surat Web Development, Student Learning Platforms, Online Education, Custom Websites">
-        <meta name="author" content="Tejas Mali">
+    <meta name="author" content="Tejas Mali">
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="Tejas Mali - Web Developer">
     <meta property="og:description"
@@ -24,8 +23,9 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Tejas Mali">
     <meta name="msvalidate.01" content="FA5BDC29B4044E9E711C255D731AD84C" />
-    
+
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -71,16 +71,16 @@
     <div class="loader-overlay">
         <div class="loader"></div>
     </div>
-   <!-- Navbar with active class on Home link -->
-<nav class="navbar">
-    <ul>
-        <li><a href="#header" class="nav-link active" data-target="header">Home</a></li>
-        <li><a href="#about" class="nav-link" data-target="about">About</a></li>
-        <li><a href="#experience" class="nav-link" data-target="experience">Experience</a></li>
-        <li><a href="#what-i-use" class="nav-link" data-target="what-i-use">Skills</a></li>
-        <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
-    </ul>
-</nav>
+    <!-- Navbar with active class on Home link -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#header" class="nav-link active" data-target="header">Home</a></li>
+            <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+            <li><a href="#experience" class="nav-link" data-target="experience">Experience</a></li>
+            <li><a href="#what-i-use" class="nav-link" data-target="what-i-use">Skills</a></li>
+            <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
     <!-- Header Section -->
     <header id="header" class="header">
         <div class="header-content">
@@ -95,7 +95,8 @@
     <section id="about" class="section">
         <h2>About Me</h2>
         <p>I'm a student of Automation and Robotics with a passion for web development. I’ve already built <a
-                href="https://fundamentalacademy.in" target="_blank">Fundamental Academy</a>,<br> an educational platform
+                href="https://fundamentalacademy.in" target="_blank">Fundamental Academy</a>,<br> an educational
+            platform
             for students. My goal is to blend my technical skills in automation with web development to create
             innovative, user-focused solutions.</p>
     </section>
@@ -104,59 +105,89 @@
     <!-- Experience Sectiacon -->
     <section id="experience" class="section">
         <h2>Experience</h2>
-        <p>Developed the educational site <a href="https://fundamentalacademy.in" target="_blank">Fundamental
-                Academy</a>, providing study materials and optimizing the site for better user experience and local SEO
-            in Surat.</p>
+        <p>
+            Developed the educational site
+            <a href="https://fundamentalacademy.in" target="_blank">Fundamental Academy</a>, providing study materials
+            and optimizing the site for better user experience and local SEO in Surat.
+        </p>
+
+        <!-- GitHub Repo Card -->
+       <div class="github-card-container">
+        <h3 id="git-card-heading">Here are my projects :</h3>
+        <div id="repo-cards" class="repo-cards-grid">
+            <!-- Repo cards will be injected here -->
+        </div>
+     </div>
     </section>
     <!-- What I Use Section -->
     <section id="what-i-use" class="section">
         <h2>Skills</h2>
         <p>Here are some of the programming languages and tools I use to build websites.</p>
-    
+
         <ul class="tools-container">
             <li class="tool-item" id="html">
                 <div class="tool-icon"><img src="/images/html5-brands-solid.svg" alt="HTML5 Icon"></div>
                 <div class="tool-name">
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+                        rel="noopener noreferrer">HTML</a>
                 </div>
                 <div class="tool-description">For structuring the web content.</div>
             </li>
             <li class="tool-item" id="css">
                 <div class="tool-icon"><img src="/images/css3-alt-brands-solid.svg" alt="CSS3 Icon"></div>
                 <div class="tool-name">
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
+                        rel="noopener noreferrer">CSS</a>
                 </div>
                 <div class="tool-description">For styling and layout design.</div>
             </li>
             <li class="tool-item" id="js">
                 <div class="tool-icon"><img src="/images/js-brands-solid.svg" alt="JavaScript Icon"></div>
                 <div class="tool-name">
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
+                        rel="noopener noreferrer">JavaScript</a>
                 </div>
                 <div class="tool-description">For adding interactivity and dynamic features.</div>
             </li>
         </ul>
-    
+
         <!-- Badges Section -->
         <div class="badge-container">
             <h3>Additional Skills & tools :</h3>
             <div class="badges">
-                <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge">
-                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge">
-                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript Badge">
-                <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel">
-                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-                <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" alt=Netlify">
-                <img src="https://camo.githubusercontent.com/6f6826054e63ddad94132a19b9b40a236bbfc06e92ec4adb987165705efd429f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f66697265626173652d2532333033394245352e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6669726562617365" alt="firebase">
-                <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap">
-                <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" alt="Canva Badge"> 
-                <br><img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white" alt="Adobe Premiere Pro Badge">
-                <img src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" alt="WordPress">
-                <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" alt="Blender Badge">
-                <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
-                <img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino Badge">
-                <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" alt="Notion Badge">
-                <img src="https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi" alt="Raspberry Pi Badge">
+                <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+                    alt="HTML5 Badge">
+                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
+                    alt="CSS3 Badge">
+                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+                    alt="JavaScript Badge">
+                <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
+                    alt="vercel">
+                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"
+                    alt="Git">
+                <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7"
+                    alt=Netlify">
+                <img src="https://camo.githubusercontent.com/6f6826054e63ddad94132a19b9b40a236bbfc06e92ec4adb987165705efd429f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f66697265626173652d2532333033394245352e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6669726562617365"
+                    alt="firebase">
+                <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white"
+                    alt="bootstrap">
+                <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white"
+                    alt="Canva Badge">
+                <br><img
+                    src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white"
+                    alt="Adobe Premiere Pro Badge">
+                <img src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white"
+                    alt="WordPress">
+                <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white"
+                    alt="Blender Badge">
+                <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+                    alt="GitHub Badge">
+                <img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white"
+                    alt="Arduino Badge">
+                <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white"
+                    alt="Notion Badge">
+                <img src="https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi"
+                    alt="Raspberry Pi Badge">
             </div>
         </div>
     </section>
@@ -213,7 +244,8 @@
     <footer>
         <p>Design by Tejas Mali ❤️</p>
     </footer>
-<script src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/apikey.js"></script>
 </body>
 
 </html>
