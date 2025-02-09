@@ -1,3 +1,4 @@
 
 # Ignore sensitive configuration file
 apikey.js
+.vercel
