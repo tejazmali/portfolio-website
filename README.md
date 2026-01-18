@@ -27,7 +27,7 @@ To run the project locally on your machine, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/tejazmali/portfolio.git
+   git clone https://github.com/tejasmmali/portfolio.git
    ```
 
 2. **Navigate into the project directory**:

@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // const GITHUB_TOKEN = "YOUR_TOKEN"; // Replace with your token if you want to use repo card
 
-    const githubUser = "tejazmali"; // Change to the GitHub username you want to fetch repos for
+    const githubUser = "tejasmmali"; // Change to the GitHub username you want to fetch repos for
   
     // Clear any previous content
     repoCardsContainer.innerHTML = '';
@@ -161,8 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
         repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
   
         repos.forEach(repo => {
-          // Skip the repo with URL: https://github.com/tejazmali/tejazmali
-          if (repo.full_name === "tejazmali/tejazmali") return;
+    
+          if (repo.full_name === "tejasmmali/tejasmmali") return;
   
           // Limit the description length (if needed)
           const maxLength = 170;
