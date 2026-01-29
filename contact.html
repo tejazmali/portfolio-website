@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Contact - Tejas Mali</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Get in touch with Tejas Mali - Web Developer and Robotics Student. Send a message, connect on social media, or reach out for collaborations.">
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords"
+        content="Tejas Mali, Contact, Web Developer, Get in Touch, Collaboration, Hire Developer">
+
+    <meta name="author" content="Tejas Mali">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tejasmali.dev/contact.html">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Contact - Tejas Mali">
+    <meta property="og:description" content="Get in touch with Tejas Mali - Web Developer and Robotics Student">
+    <meta property="og:url" content="https://tejasmali.dev/contact.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#about">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#about-me">About Me</a></li>
+                            <li><a href="index.html#skills">Skills</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="contact-btn active">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-page-section" style="margin-top: 6rem;">
+        <div class="contact-page-container">
+            <div class="contact-page-content">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Send me an email</p>
+                        <a href="mailto:tejasmali@mail.com" class="contact-link">tejasmali@mail.com</a>
+                    </div>
+
+                    <div class="contact-method-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check out my code</p>
+                        <a href="https://github.com/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/tejasmmali</a>
+                    </div>
+
+                    <div class="contact-method-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect professionally</p>
+                        <a href="https://linkedin.com/in/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/tejasmmali</a>
+                    </div>
+
+                    <div class="contact-method-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>Follow my journey</p>
+                        <a href="https://instagram.com/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">@tejasmmali</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send a Message</h3>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="72e41e2f-837f-4acf-aa31-4bd9c11589a4">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="formMessage" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <!-- Footer -->
+     <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="spotify-widget">
+                    <div class="spotify-logo">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                    <div class="spotify-text">
+                        <p>Not Playing Spotify</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a> 
+                  <a href="#projects">Projects</a>
+                </div>
+                <div class="footer-column">
+                    <a href="https://instagram.com/tejasmmali" target="_blank">Instagram</a>
+                    <a href="https://x.com/intent/tejasmmali" target="_blank">X (Twitter)</a>
+                    <a href="https://github.com/tejasmmali" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/tejasmmali" target="_blank">LinkedIn</a>
+                    <a href="https://discord.com/users/tejazmali" target="_blank">Discord</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="temperature-wrapper">
+                    <div class="temperature">14.7°C</div>
+                    <span class="temperature-tooltip">This is my city temperature</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">Proudly Made in by Tejas Mali © 2026</p>
+
+        </div>
+        <div class="footer-decoration">
+            <div class="flower-border"></div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/temprature.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const formMessage = document.getElementById('formMessage');
+            const submitButton = form.querySelector('.submit-button');
+
+            submitButton.classList.add('loading');
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'green';
+                    formMessage.style.backgroundColor = '#d1fae5';
+                    formMessage.textContent = 'Your message has been sent successfully!';
+                    form.reset();
+                } else {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'red';
+                    formMessage.style.backgroundColor = '#fee2e2';
+                    formMessage.textContent = 'Oops! There was a problem sending your message.';
+                }
+            } catch (error) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = 'red';
+                formMessage.style.backgroundColor = '#fee2e2';
+                formMessage.textContent = 'An error occurred. Please try again later.';
+            } finally {
+                submitButton.classList.remove('loading');
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>

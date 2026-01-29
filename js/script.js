@@ -46,54 +46,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Profile image automatic animation (GIF-like)
+    // Profile image hover to change photo
     const profileImage = document.getElementById('profile-image');
     const profileWrapper = document.querySelector('.profile-image-wrapper');
     
-    // Array of profile images for animation
+    // Array of profile images
     const profileImages = [
-        'images/my-pixel-art/1-removebg-preview.png',
-        'images/my-pixel-art/2-removebg-preview.png'
+        'images/my-pixel-art/2-removebg-preview.png',  
+        'images/my-pixel-art/1-removebg-preview.png'   
     ];
     
-    let currentProfileIndex = 0;
-    
-    // Function to change profile image automatically
-    function changeProfileImage() {
-        if (profileImages.length > 1 && profileImage) {
-            // Fast fade out
-            profileImage.style.opacity = '0';
-            
-            setTimeout(() => {
-                // Change image
-                currentProfileIndex = (currentProfileIndex + 1) % profileImages.length;
-                profileImage.src = profileImages[currentProfileIndex];
-                
-                // Fast fade in
-                setTimeout(() => {
-                    profileImage.style.opacity = '1';
-                }, 30);
-            }, 100);
-        }
-    }
-    
-    // Start automatic animation (change every 1 second for fast GIF-like effect)
-    if (profileImage && profileImages.length > 1) {
-        // Set initial image
+
+    if (profileImage && profileImages.length > 0) {
         profileImage.src = profileImages[0];
-        
-        // Auto-cycle images every 1 second
-        setInterval(changeProfileImage, 1000);
     }
     
-    // Hover effect enhancement (keep hover animation)
-    if (profileWrapper) {
+   
+    if (profileWrapper && profileImages.length > 1) {
+        // Switch to second image when hovering
         profileWrapper.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.05) rotate(2deg)';
+            if (profileImage) {
+                profileImage.src = profileImages[1];
+            }
         });
         
+        // Switch back to first image when not hovering
         profileWrapper.addEventListener('mouseleave', function() {
             this.style.transform = 'scale(1) rotate(0deg)';
+            if (profileImage) {
+                profileImage.src = profileImages[0];
+            }
         });
     }
     
