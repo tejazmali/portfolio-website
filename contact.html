@@ -1,226 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Contact - Tejas Mali</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Tejas Mali</title>
+  <meta name="description" content="Get in touch with Tejas Mali — Web Developer and Robotics Student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="shared.css">
+<style>
+/* ── PAGE HERO ── */
+.page-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem) 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.page-hero-text .section-label { font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); font-weight:600; margin-bottom:.6rem; }
+.page-hero-text h1 { font-size:clamp(2.4rem,6vw,4.5rem); font-weight:800; color:var(--white); line-height:1.05; margin-bottom:1rem; }
+.page-hero-text h1 span { color:var(--accent); }
+.page-hero-text p { font-size:1rem; color:var(--muted); line-height:1.8; max-width:400px; }
+.availability-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(0,229,160,.08); border:1px solid rgba(0,229,160,.2); color:var(--accent); font-size:.78rem; font-weight:600; letter-spacing:.06em; padding:.4rem 1rem; border-radius:100px; margin-bottom:1.5rem; }
+.avail-dot { width:7px; height:7px; background:var(--accent); border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
 
-    <!-- Meta Description for SEO -->
-    <meta name="description"
-        content="Get in touch with Tejas Mali - Web Developer and Robotics Student. Send a message, connect on social media, or reach out for collaborations.">
+/* ── CONTACT CARDS ── */
+.contact-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; }
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::before { content:''; position:absolute; inset:0; background:var(--accent); opacity:0; transition:opacity var(--ease); }
+.contact-card:hover { border-color:rgba(0,229,160,.35); transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.3); }
+.contact-card:hover::before { opacity:.03; }
+.card-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; position:relative; z-index:1; }
+.card-body { position:relative; z-index:1; }
+.card-body h3 { font-size:.9rem; font-weight:700; color:var(--white); margin-bottom:.15rem; }
+.card-body span { font-size:.8rem; color:var(--muted); }
+.card-arrow { margin-left:auto; color:var(--muted); font-size:.75rem; position:relative; z-index:1; transition:transform var(--ease), color var(--ease); }
+.contact-card:hover .card-arrow { transform:translate(3px,-3px); color:var(--accent); }
 
-    <!-- Keywords for SEO -->
-    <meta name="keywords"
-        content="Tejas Mali, Contact, Web Developer, Get in Touch, Collaboration, Hire Developer">
+/* ── FORM SECTION ── */
+.contact-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem,4vw,3rem) 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.contact-info h2 { font-size:1.5rem; font-weight:800; color:var(--white); margin-bottom:.75rem; }
+.contact-info p { font-size:.9rem; color:var(--muted); line-height:1.8; margin-bottom:2rem; }
+.info-list { display:flex; flex-direction:column; gap:.75rem; }
+.info-item { display:flex; align-items:center; gap:.75rem; }
+.info-icon { width:36px; height:36px; border-radius:var(--r-sm); background:rgba(0,229,160,.1); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0; }
+.info-item span { font-size:.875rem; color:var(--muted); }
+.info-item a { font-size:.875rem; color:var(--text); text-decoration:none; transition:color var(--ease); }
+.info-item a:hover { color:var(--accent); }
+.social-row { display:flex; gap:.5rem; margin-top:2rem; flex-wrap:wrap; }
+.soc-btn { display:flex; align-items:center; gap:.4rem; padding:.45rem .9rem; border-radius:var(--r-sm); background:var(--card); border:1px solid var(--border); color:var(--muted); text-decoration:none; font-size:.8rem; font-weight:500; transition:all var(--ease); }
+.soc-btn:hover { border-color:var(--accent); color:var(--accent); }
 
-    <meta name="author" content="Tejas Mali">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tejasmali.dev/contact.html">
+/* ── FORM ── */
+.contact-form-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+.form-title { font-size:1.25rem; font-weight:800; color:var(--white); margin-bottom:.5rem; }
+.form-subtitle { font-size:.85rem; color:var(--muted); margin-bottom:2rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.form-group { margin-bottom:1.25rem; }
+.form-group label { display:block; font-size:.8rem; font-weight:600; color:var(--text); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.5rem; }
+.form-group input,
+.form-group textarea {
+  width:100%; padding:.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text);
+  font-size:.9rem;
+  font-family:'DM Sans',sans-serif;
+  transition: border-color var(--ease), box-shadow var(--ease);
+  resize: vertical;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color:var(--muted); }
+.form-group input:focus,
+.form-group textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,229,160,.1); }
+.form-group textarea { min-height:130px; }
+.submit-btn {
+  width:100%; padding:.85rem 1.5rem;
+  background:var(--accent); color:#000;
+  font-weight:700; font-size:.95rem;
+  border:none; border-radius:var(--r-sm);
+  cursor:pointer; font-family:'Syne',sans-serif;
+  display:flex; align-items:center; justify-content:center; gap:.5rem;
+  transition:all var(--ease);
+  letter-spacing:.02em;
+}
+.submit-btn:hover:not(:disabled) { background:#00c990; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,229,160,.3); }
+.submit-btn:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+.form-msg { margin-top:1rem; padding:.85rem 1rem; border-radius:var(--r-sm); font-size:.875rem; display:none; }
+.form-msg.success { background:rgba(0,229,160,.1); color:var(--accent); border:1px solid rgba(0,229,160,.2); }
+.form-msg.error { background:rgba(239,68,68,.1); color:#ef4444; border:1px solid rgba(239,68,68,.2); }
 
-    <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Contact - Tejas Mali">
-    <meta property="og:description" content="Get in touch with Tejas Mali - Web Developer and Robotics Student">
-    <meta property="og:url" content="https://tejasmali.dev/contact.html">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+/* ── RESPONSIVE ── */
+@media(max-width:900px) { .page-hero{grid-template-columns:1fr} .page-hero-aside{display:none} .contact-layout{grid-template-columns:1fr} }
+@media(max-width:600px) { .contact-cards{grid-template-columns:1fr} .form-row{grid-template-columns:1fr} .contact-form-box{padding:1.5rem} }
+</style>
 </head>
-
 <body>
-    <!-- Navigation Header -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="index.html#about">About <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html#about-me">About Me</a></li>
-                            <li><a href="index.html#skills">Skills</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html" class="contact-btn active">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Contact Section -->
-    <section class="contact-page-section" style="margin-top: 6rem;">
-        <div class="contact-page-container">
-            <div class="contact-page-content">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+<header class="main-header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">tejas<span>.</span>dev</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="index.html#about">About <i class="fas fa-chevron-down" style="font-size:.65rem"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#about-me">About Me</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+        </ul>
+      </li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="contact-btn active">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars" id="menuIcon"></i></button>
+  </nav>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="index.html#about-me">About Me</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html" class="m-contact">Contact</a>
+</nav>
 
-                <div class="contact-methods">
-                    <div class="contact-method-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>Send me an email</p>
-                        <a href="mailto:tejasmali@mail.com" class="contact-link">tejasmali@mail.com</a>
-                    </div>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-text reveal">
+    <p class="section-label">/ contact</p>
+    <div class="availability-badge"><span class="avail-dot"></span> Open to opportunities</div>
+    <h1>Let's<br><span>Work Together</span></h1>
+    <p>Have a project in mind, want to collaborate, or just want to say hi? I'd love to hear from you. Fill out the form or reach out through any of the channels below.</p>
+  </div>
+  <div class="page-hero-aside reveal">
+    <div class="contact-cards">
+      <a href="mailto:tejasmali@mail.com" class="contact-card">
+        <div class="card-icon" style="background:rgba(239,68,68,.12);color:#ef4444"><i class="fas fa-envelope"></i></div>
+        <div class="card-body"><h3>Email</h3><span>tejasmali@mail.com</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+      <a href="https://github.com/tejasmmali" target="_blank" class="contact-card">
+        <div class="card-icon" style="background:rgba(255,255,255,.06);color:#e8e8f0"><i class="fab fa-github"></i></div>
+        <div class="card-body"><h3>GitHub</h3><span>tejasmmali</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+      <a href="https://linkedin.com/in/tejasmmali" target="_blank" class="contact-card">
+        <div class="card-icon" style="background:rgba(0,119,181,.15);color:#0077B5"><i class="fab fa-linkedin-in"></i></div>
+        <div class="card-body"><h3>LinkedIn</h3><span>tejasmmali</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+      <a href="https://instagram.com/tejasmmali" target="_blank" class="contact-card">
+        <div class="card-icon" style="background:rgba(228,64,95,.12);color:#e4405f"><i class="fab fa-instagram"></i></div>
+        <div class="card-body"><h3>Instagram</h3><span>@tejasmmali</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+      <a href="https://discord.com/users/tejazmali" target="_blank" class="contact-card">
+        <div class="card-icon" style="background:rgba(88,101,242,.15);color:#5865F2"><i class="fab fa-discord"></i></div>
+        <div class="card-body"><h3>Discord</h3><span>tejazmali</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+      <a href="https://x.com/tejasmmali" target="_blank" class="contact-card">
+        <div class="card-icon" style="background:rgba(255,255,255,.06);color:#e8e8f0"><i class="fa-brands fa-x-twitter"></i></div>
+        <div class="card-body"><h3>X / Twitter</h3><span>@tejasmmali</span></div>
+        <i class="fas fa-arrow-up-right card-arrow"></i>
+      </a>
+    </div>
+  </div>
+</div>
 
-                    <div class="contact-method-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p>Check out my code</p>
-                        <a href="https://github.com/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/tejasmmali</a>
-                    </div>
+<!-- FORM SECTION -->
+<div class="contact-layout">
+  <div class="contact-info reveal">
+    <h2>Send a Message</h2>
+    <p>I typically respond within 24 hours. Feel free to reach out about freelance work, collaborations, or just a friendly chat.</p>
+    <div class="info-list">
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-pin"></i></div>
+        <span>Gujarat, India 🇮🇳</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <span>IST (UTC +5:30)</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <a href="mailto:tejasmali@mail.com">tejasmali@mail.com</a>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-code"></i></div>
+        <a href="https://github.com/tejasmmali" target="_blank">github.com/tejasmmali</a>
+      </div>
+    </div>
+    <div class="social-row">
+      <a href="https://instagram.com/tejasmmali" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://x.com/tejasmmali" target="_blank" class="soc-btn"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+      <a href="https://github.com/tejasmmali" target="_blank" class="soc-btn"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/tejasmmali" target="_blank" class="soc-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+  </div>
 
-                    <div class="contact-method-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p>Connect professionally</p>
-                        <a href="https://linkedin.com/in/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/tejasmmali</a>
-                    </div>
-
-                    <div class="contact-method-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h3>Instagram</h3>
-                        <p>Follow my journey</p>
-                        <a href="https://instagram.com/tejasmmali" target="_blank" rel="noopener noreferrer" class="contact-link">@tejasmmali</a>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <h3 class="form-title">Send a Message</h3>
-                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="72e41e2f-837f-4acf-aa31-4bd9c11589a4">
-
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Your message here..." rows="6" required></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-button">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                    <div id="formMessage" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px;"></div>
-                </div>
-            </div>
+  <div class="contact-form-box reveal">
+    <h2 class="form-title">Get In Touch</h2>
+    <p class="form-subtitle">I read every message personally.</p>
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="72e41e2f-837f-4acf-aa31-4bd9c11589a4">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
-    </section>
-
-    <!-- Footer -->
-     <!-- Footer -->
-     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <div class="spotify-widget">
-                    <div class="spotify-logo">
-                        <i class="fab fa-spotify"></i>
-                    </div>
-                    <div class="spotify-text">
-                        <p>Not Playing Spotify</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <a href="index.html#about-me">About</a>
-                    <a href="contact.html">Contact</a> 
-                  <a href="index.html#projects">Projects</a>
-                </div>
-                <div class="footer-column">
-                    <a href="https://instagram.com/tejasmmali" target="_blank">Instagram</a>
-                    <a href="https://x.com/intent/tejasmmali" target="_blank">X (Twitter)</a>
-                    <a href="https://github.com/tejasmmali" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/tejasmmali" target="_blank">LinkedIn</a>
-                    <a href="https://discord.com/users/tejazmali" target="_blank">Discord</a>
-                </div>
-            </div>
-            <div class="footer-right">
-                <div class="temperature-wrapper">
-                    <div class="temperature">14.7°C</div>
-                    <span class="temperature-tooltip">This is my city temperature</span>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">Proudly Made in by Tejas Mali © 2026</p>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project, idea, or just say hi..." rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+    <div id="formMsg" class="form-msg"></div>
+  </div>
+</div>
 
-        </div>
-        <div class="footer-decoration">
-            <div class="flower-border"></div>
-        </div>
-    </footer>
-    <script src="js/script.js"></script>
-    <script src="js/temprature.js"></script>
-    <script>
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const formMessage = document.getElementById('formMessage');
-            const submitButton = form.querySelector('.submit-button');
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="brand-name">tejas<span>.</span>dev</div><p>Web developer & robotics student from Gujarat, India.</p></div>
+    <a href="#" class="footer-spotify"><i class="fab fa-spotify spotify-ico"></i><div class="spotify-text"><strong>Not Playing</strong>Spotify</div></a>
+    <div class="footer-links-grid">
+      <div class="footer-col"><span class="footer-col-title">Pages</span><a href="index.html#about-me">About</a><a href="contact.html">Contact</a><a href="projects.html">Projects</a></div>
+      <div class="footer-col"><span class="footer-col-title">Social</span><a href="https://instagram.com/tejasmmali" target="_blank">Instagram</a><a href="https://x.com/tejasmmali" target="_blank">X / Twitter</a><a href="https://github.com/tejasmmali" target="_blank">GitHub</a><a href="https://linkedin.com/in/tejasmmali" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="footer-bottom"><p>© 2026 Tejas Mali — Proudly Made in India 🇮🇳</p><span class="temp-badge">🌡 14.7°C</span></div>
+    <div class="footer-rainbow"></div>
+  </div>
+</footer>
 
-            submitButton.classList.add('loading');
-            submitButton.disabled = true;
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = 'green';
-                    formMessage.style.backgroundColor = '#d1fae5';
-                    formMessage.textContent = 'Your message has been sent successfully!';
-                    form.reset();
-                } else {
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = 'red';
-                    formMessage.style.backgroundColor = '#fee2e2';
-                    formMessage.textContent = 'Oops! There was a problem sending your message.';
-                }
-            } catch (error) {
-                formMessage.style.display = 'block';
-                formMessage.style.color = 'red';
-                formMessage.style.backgroundColor = '#fee2e2';
-                formMessage.textContent = 'An error occurred. Please try again later.';
-            } finally {
-                submitButton.classList.remove('loading');
-                submitButton.disabled = false;
-            }
-        });
-    </script>
+<script>
+// Mobile menu
+const toggle=document.getElementById('menuToggle'),mob=document.getElementById('mobileNav'),icon=document.getElementById('menuIcon');
+toggle.addEventListener('click',()=>{mob.classList.toggle('open');icon.className=mob.classList.contains('open')?'fas fa-times':'fas fa-bars'});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');icon.className='fas fa-bars'}));
+// Reveal
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Form
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  const msg=document.getElementById('formMsg');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending…';
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    msg.className='form-msg '+(res.ok?'success':'error');
+    msg.textContent=res.ok?'✓ Message sent! I\'ll get back to you soon.':'Something went wrong. Please try again.';
+    msg.style.display='block';
+    if(res.ok)this.reset();
+  }catch{
+    msg.className='form-msg error';
+    msg.textContent='Network error. Please try again later.';
+    msg.style.display='block';
+  }finally{
+    btn.disabled=false;
+    btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';
+  }
+});
+</script>
 </body>
-
 </html>
