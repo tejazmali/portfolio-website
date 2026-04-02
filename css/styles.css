@@ -1,4 +1,20 @@
+/* Fix BuyMeACoffee popup window */
+#bmc-wbtn + div {
+  right: 20px !important;
+  bottom: 90px !important;
+  width: 380px !important;
+  height: 620px !important;
+  max-height: 80vh !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
 
+/* Fix iframe inside popup */
+#bmc-wbtn + div iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 14px !important;
+}
 *,
 *::before,
 *::after {
@@ -229,7 +245,6 @@ filter:brightness(0) invert(1);
   margin-top: .5rem;
 }
 
-/* ─── FOOTER ─────────────────────────────────────────── */
 .main-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -367,7 +382,7 @@ filter:brightness(0) invert(1);
   color: var(--accent);
 }
 
-/* ─── UTILITIES ──────────────────────────────────────── */
+
 .section-label {
   font-size: .75rem;
   text-transform: uppercase;
@@ -420,7 +435,7 @@ filter:brightness(0) invert(1);
 }
 
 .btn-ghost {
-  background: transparent;
+  background:#6b6b8015;
   color: var(--text);
   font-weight: 500;
   font-size: .9rem;
@@ -453,7 +468,7 @@ filter:brightness(0) invert(1);
   transform: translateY(0);
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────── */
+
 @media (max-width: 900px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;

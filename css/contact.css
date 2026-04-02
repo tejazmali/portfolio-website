@@ -1,4 +1,4 @@
-  /* ── PAGE HERO ── */
+
     .page-hero {
       max-width: 1100px;
       margin: 0 auto;
@@ -74,7 +74,7 @@
       }
     }
 
-    /* ── CONTACT CARDS ── */
+
     .contact-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -158,7 +158,6 @@
       color: var(--accent);
     }
 
-    /* ── FORM SECTION ── */
     .contact-layout {
       max-width: 1100px;
       margin: 0 auto;
@@ -251,7 +250,7 @@
       color: var(--accent);
     }
 
-    /* ── FORM ── */
+ 
     .contact-form-box {
       background: var(--card);
       border: 1px solid var(--border);
@@ -373,7 +372,7 @@
       border: 1px solid rgba(239, 68, 68, .2);
     }
 
-    /* ── RESPONSIVE ── */
+    
     @media(max-width:900px) {
       .page-hero {
         grid-template-columns: 1fr

@@ -1,4 +1,3 @@
-
 const apiKey = "144f290761e76bb34156a51a004b52e6"; 
 const city = "Surat";
 
@@ -10,15 +9,15 @@ async function getTemperature() {
 
         const data = await response.json();
 
-        const temp = data.main.temp;
+        const temp = Math.round(data.main.temp);
+        const cityName = data.name;
 
-        document.querySelector(".temperature").innerText = `${temp}°C`;
+        document.querySelector(".temp-badge").innerText = `${cityName} • ${temp}°C`;
 
     } catch (error) {
         console.log(error);
-        document.querySelector(".temperature").innerText = "Temp not available";
+        document.querySelector(".temp-badge").innerText = "Temp not available";
     }
 }
 
 getTemperature();
-

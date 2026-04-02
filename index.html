@@ -13,14 +13,13 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css"> 
+    
 
-  <style>
- 
-  </style>
 </head>
 
 <body>
+
 
   <header class="main-header">
     <nav class="navbar">
@@ -55,343 +54,504 @@
     <a href="contact.html" class="m-contact">Contact →</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero-section">
-    <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Available for opportunities</div>
-    <div class="hero-grid">
-      <div class="hero-text">
-        <h1 class="hero-heading">Hi, I'm<br><span class="accent">Tejas</span> <span class="accent2">Mali</span></h1>
-        <p class="hero-role">Web Developer &amp; Robotics Student</p>
-        <p class="hero-description">A wizard of code, weaving stories through projects and applications. Passionate
-          about web development and an enthusiast for technology — crafting experiences and building tools that make an
-          impact.</p>
-        <div class="hero-actions">
-          <a href="projects.html" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
-          <a href="contact.html" class="btn-ghost">Say Hello</a>
-        </div>
-        <div class="social-links">
-          <a href="https://www.instagram.com/tejasmmali/" target="_blank" class="social-link" aria-label="Instagram"><i
-              class="fab fa-instagram"></i></a>
-          <a href="https://x.com/tejasmmali" target="_blank" class="social-link" aria-label="X"><i
-              class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/tejasmmali/" target="_blank" class="social-link" aria-label="LinkedIn"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/tejasmmali" target="_blank" class="social-link" aria-label="GitHub"><i
-              class="fab fa-github"></i></a>
-          <a href="https://discord.com/users/tejazmali" target="_blank" class="social-link" aria-label="Discord"><i
-              class="fab fa-discord"></i></a>
-        </div>
-      </div>
-      <div class="hero-avatar">
-        <div class="avatar-wrap">
-          <div class="avatar-bg-ring">
-            <div class="avatar-bg-ring-inner"></div>
+  <!-- HERO with Flickering Grid BG -->
+  <div class="hero-outer">
+  
+    <canvas id="flickerCanvas" aria-hidden="true"></canvas>
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Available for opportunities</div>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-heading">Hi, I'm<br><span class="accent">Tejas</span> <span class="accent2">Mali</span></h1>
+          <p class="hero-role">Web Developer &amp; Robotics Student</p>
+          <p class="hero-description">A wizard of code, weaving stories through projects and applications. Passionate
+            about web development and an enthusiast for technology — crafting experiences and building tools that make
+            an
+            impact.</p>
+          <div class="hero-actions">
+            <a href="projects.html" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+            <a href="contact.html" class="btn-ghost">Get In Touch</a>
           </div>
-          <img class="avatar-img"
-            src="data:image/jpeg;base64,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"
-            alt="Tejas Mali - pixel art portrait">
-          <div class="avatar-pixel-glow"></div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/tejasmmali/" target="_blank" class="social-link"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/tejasmmali" target="_blank" class="social-link" aria-label="X"><i
+                class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/tejasmmali/" target="_blank" class="social-link"
+              aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/tejasmmali" target="_blank" class="social-link" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a href="https://discord.com/users/tejazmali" target="_blank" class="social-link" aria-label="Discord"><i
+                class="fab fa-discord"></i></a>
+          </div>
+        </div>
+        <div class="hero-avatar">
+          <div class="avatar-wrap">
+            <div class="avatar-bg-ring">
+              <div class="avatar-bg-ring-inner"></div>
+            </div>
+            <img class="avatar-img" src="/images/my-pixel-art/2-removebg-preview.png"
+              alt="Tejas Mali - pixel art portrait">
+            <div class="avatar-pixel-glow"></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Tech Scroll -->
-    <div class="tech-logos-section">
-      <div class="tech-scroll-wrapper">
-        <div class="tech-scroll-row tech-scroll-right" id="row1"></div>
-      </div>
-      <div class="tech-scroll-wrapper">
-        <div class="tech-scroll-row tech-scroll-left" id="row2"></div>
-      </div>
-      <div class="tech-scroll-wrapper">
-        <div class="tech-scroll-row tech-scroll-right" id="row3"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="quote-section reveal">
-    <blockquote>
-      <span class="quote-mark">"</span>
-      <p class="quote-text">Good artists borrow, great artists steal.</p>
-      <cite class="quote-author">— Pablo Picasso</cite>
-    </blockquote>
-  </section>
-
-  <div style="max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)">
-    <div
-      style="height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:1rem 0 2rem">
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="content-section reveal" id="about-me">
-    <p class="section-label">/ about</p>
-    <h2 class="section-title">About Me</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3><span class="icon"><i class="fas fa-code"></i></span> Developer</h3>
-        <p>My journey started with curiosity — curiosity about how websites work, how systems communicate, and how
-          technology can solve real-world problems. Over time, this curiosity turned into passion.</p>
-      </div>
-      <div class="about-card">
-        <h3><span class="icon"><i class="fas fa-robot"></i></span> Robotics Student</h3>
-        <p>Currently pursuing a Diploma in Automation and Robotics, combining theoretical knowledge with hands-on
-          practice. I plan to continue with a degree in the same field.</p>
-      </div>
-      <div class="about-card wide">
-        <h3><span class="icon"><i class="fas fa-rocket"></i></span> My Driving Ambition</h3>
-        <p>My aspiration is to become a highly skilled full-stack developer, proficient in both front-end and back-end
-          technologies. I'm dedicated to continuous learning, honing my craft, and making a positive difference through
-          technology. Every line of code I write is a step toward building something meaningful and impactful.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="content-section reveal" id="skills">
-    <p class="section-label">/ capabilities</p>
-    <h2 class="section-title">Key Skills</h2>
-    <ul class="skills-list">
-      <li class="skill-item"><strong>Continuous Learning</strong><span>Passionate about web development and committed to
-          expanding knowledge and skills constantly.</span></li>
-      <li class="skill-item"><strong>Adaptability</strong><span>Quickly learns and applies new technologies like
-          TypeScript and Next.js in complex projects.</span></li>
-      <li class="skill-item"><strong>Community Engagement</strong><span>Actively involved in open-source projects,
-          contributing through mentorship and knowledge sharing.</span></li>
-    </ul>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="content-section reveal">
-    <p class="section-label">/ background</p>
-    <h2 class="section-title">Education</h2>
-    <p class="section-sub">A glimpse into my educational journey.</p>
-    <div class="education-timeline">
-      <div class="education-item">
-        <div class="edu-icon green"><i class="fas fa-graduation-cap"></i></div>
-        <div class="edu-body">
-          <h3>DRS & SS Gandhi College of Engineering and Technology</h3>
-          <p class="edu-degree">Diploma in Automation and Robotics</p>
-          <p class="edu-period">2024 – Present</p>
-          <p class="edu-desc">Currently pursuing a Diploma in Automation and Robotics, driven by a genuine interest in
-            robotics, automation systems, and modern engineering technologies.</p>
+      <!-- tech logos -->
+      <div class="tech-logos-section">
+        <div class="tech-scroll-wrapper">
+          <div class="tech-scroll-row tech-scroll-right" id="row1"></div>
+        </div>
+        <div class="tech-scroll-wrapper">
+          <div class="tech-scroll-row tech-scroll-left" id="row2"></div>
+        </div>
+        <div class="tech-scroll-wrapper">
+          <div class="tech-scroll-row tech-scroll-right" id="row3"></div>
         </div>
       </div>
-      <div class="education-item">
-        <div class="edu-icon purple">M</div>
-        <div class="edu-body">
-          <h3>Matrubhumi Vidyalaya, Gujarat Board</h3>
-          <p class="edu-degree">Secondary & Higher Secondary Education (SKG – 10th Grade)</p>
-          <p class="edu-period">2009 – 2024</p>
-          <p class="edu-desc">Completed schooling at Matrubhumi Vidyalaya. In 2022, participated in a science fest — a
-            turning point that sparked a deep interest in robotics that continues to guide my career path.</p>
-        </div>
+    </section>
+</div>
+    <!-- qoute -->
+    <section class="quote-section reveal">
+      <blockquote>
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Good artists borrow, great artists steal.</p>
+        <cite class="quote-author">— Pablo Picasso</cite>
+      </blockquote>
+    </section>
+
+    <div style="max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)">
+      <div
+        style="height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:1rem 0 2rem">
       </div>
     </div>
-  </section>
 
-  <!-- TIMELINE -->
-  <section class="content-section reveal">
-    <p class="section-label">/ journey</p>
-    <h2 class="section-title">Timeline 🌸</h2>
-    <div class="timeline-container">
-      <div class="timeline-year-group">
-        <h3 class="year-label">2025</h3>
-        <div class="timeline-item">
-          <h4>Created Robotics Project in College</h4>
-          <p>Worked with friends on a robot designed to inspect cracks in industrial boilers using a camera and OpenCV
-            library for real-time crack detection.</p>
+    <!-- about -->
+    <section class="content-section reveal" id="about-me">
+      <p class="section-label">/ about</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3><span class="icon"><i class="fas fa-code"></i></span> Developer</h3>
+          <p>My journey started with curiosity — curiosity about how websites work, how systems communicate, and how
+            technology can solve real-world problems. Over time, this curiosity turned into passion.</p>
+        </div>
+        <div class="about-card">
+          <h3><span class="icon"><i class="fas fa-robot"></i></span> Robotics Student</h3>
+          <p>Currently pursuing a Diploma in Automation and Robotics, combining theoretical knowledge with hands-on
+            practice. I plan to continue with a degree in the same field.</p>
+        </div>
+        <div class="about-card wide">
+          <h3><span class="icon"><i class="fas fa-rocket"></i></span> My Driving Ambition</h3>
+          <p>My aspiration is to become a highly skilled full-stack developer, proficient in both front-end and back-end
+            technologies. I'm dedicated to continuous learning, honing my craft, and making a positive difference
+            through
+            technology. Every line of code I write is a step toward building something meaningful and impactful.</p>
         </div>
       </div>
-      <div class="timeline-year-group">
-        <h3 class="year-label">2024</h3>
-        <div class="timeline-item">
-          <h4>Freelance Project</h4>
-          <p>Gained hands-on experience collaborating on real-world projects, sharpening skills and marking a
-            significant milestone in the development journey.</p>
+    </section>
+
+    <!-- skill-->
+    <section class="content-section reveal" id="skills">
+      <p class="section-label">/ capabilities</p>
+      <h2 class="section-title">Key Skills</h2>
+      <ul class="skills-list">
+        <li class="skill-item"><strong>Continuous Learning</strong><span>Passionate about web development and committed
+            to
+            expanding knowledge and skills constantly.</span></li>
+        <li class="skill-item"><strong>Adaptability</strong><span>Quickly learns and applies new technologies like
+            TypeScript and Next.js in complex projects.</span></li>
+        <li class="skill-item"><strong>Community Engagement</strong><span>Actively involved in open-source projects,
+            contributing through mentorship and knowledge sharing.</span></li>
+      </ul>
+    </section>
+
+    <!-- edu -->
+    <section class="content-section reveal">
+      <p class="section-label">/ background</p>
+      <h2 class="section-title">Education</h2>
+      <p class="section-sub">A glimpse into my educational journey.</p>
+      <div class="education-timeline">
+        <div class="education-item">
+          <div class="edu-icon green"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h3>DRS & SS Gandhi College of Engineering and Technology</h3>
+            <p class="edu-degree">Diploma in Automation and Robotics</p>
+            <p class="edu-period">2024 – Present</p>
+            <p class="edu-desc">Currently pursuing a Diploma in Automation and Robotics, driven by a genuine interest in
+              robotics, automation systems, and modern engineering technologies.</p>
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="edu-icon purple">M</div>
+          <div class="edu-body">
+            <h3>Matrubhumi Vidyalaya, Gujarat Board</h3>
+            <p class="edu-degree">Secondary & Higher Secondary Education (SKG – 10th Grade)</p>
+            <p class="edu-period">2009 – 2024</p>
+            <p class="edu-desc">Completed schooling at Matrubhumi Vidyalaya. In 2022, participated in a science fest — a
+              turning point that sparked a deep interest in robotics that continues to guide my career path.</p>
+          </div>
         </div>
       </div>
-      <div class="timeline-year-group">
-        <h3 class="year-label">2023</h3>
-        <div class="timeline-item">
-          <h4>Spark of Web Development</h4>
-          <p>Took the first step into web development by learning HTML & CSS, building static websites, and igniting a
-            passion for the craft.</p>
+    </section>
+
+<!-- timeline -->
+    <section class="content-section reveal">
+      <p class="section-label">/ journey</p>
+      <h2 class="section-title">Timeline 🌸</h2>
+      <div class="timeline-container">
+
+        <div class="timeline-year-group">
+
+          <h3 class="year-label">2026 </h3>
+          <div class="timeline-item">
+            <h4>Robotics & IoT Exploration</h4>
+            <p>Started the year by focusing more deeply on robotics and IoT, learning advanced concepts in automation,
+              sensors, and embedded systems while experimenting with new technologies and practical projects.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>3D Printing for Future Projects</h4>
+            <p>Received a grant that helped me acquire a 3D printer, enabling me to design and prototype custom parts
+              for upcoming robotics and IoT projects and expand my hands-on development capabilities.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h4>Passed SSC Examination</h4>
-          <p>Appeared for the SSC examination in early 2024, marking a significant academic milestone in the journey.
-          </p>
+
+        <div class="timeline-year-group">
+
+          <h3 class="year-label">2025</h3>
+          <div class="timeline-item">
+            <h4>Created Robotics Project in College</h4>
+            <p>Worked with friends on a robot designed to inspect cracks in industrial boilers using a camera and OpenCV
+              library for real-time crack detection.</p>
+          </div>
+        </div>
+        <div class="timeline-year-group">
+          <h3 class="year-label">2024</h3>
+          <div class="timeline-item">
+            <h4>Freelance Project</h4>
+            <p>Gained hands-on experience collaborating on real-world projects, sharpening skills and marking a
+              significant milestone in the development journey.</p>
+          </div>
+        </div>
+        <div class="timeline-year-group">
+          <h3 class="year-label">2023</h3>
+          <div class="timeline-item">
+            <h4>Spark of Web Development</h4>
+            <p>Took the first step into web development by learning HTML & CSS, building static websites, and igniting a
+              passion for the craft.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Passed SSC Examination</h4>
+            <p>Appeared for the SSC examination in early 2024, marking a significant academic milestone in the journey.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <a href="#" class="see-more-btn">See More <i class="fas fa-arrow-right"></i></a>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="projects-section">
-    <div class="projects-inner">
-      <p class="section-label">/ work</p>
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A collection of my work and contributions.</p>
-      <div id="projects-container" class="projects-grid"></div>
-      <div id="projects-loading" class="projects-loading">
-        <div class="loading-spinner"></div>
-        <p>Loading projects…</p>
+      <a href="#" class="see-more-btn">See More <i class="fas fa-arrow-right"></i></a>
+    </section>
+<!-- projects -->
+    <section class="projects-section">
+      <div class="projects-inner">
+        <p class="section-label">/ work</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">A collection of my work and contributions.</p>
+        <div id="projects-container" class="projects-grid"></div>
+        <div id="projects-loading" class="projects-loading">
+          <div class="loading-spinner"></div>
+          <p>Loading projects…</p>
+        </div>
+        <div id="projects-error"
+          style="display:none;text-align:center;padding:2rem;color:#ef4444;background:rgba(239,68,68,.08);border-radius:var(--radius);margin-top:1rem">
+          <p>Unable to load projects. Please try again later.</p>
+        </div>
       </div>
-      <div id="projects-error"
-        style="display:none;text-align:center;padding:2rem;color:#ef4444;background:rgba(239,68,68,.08);border-radius:var(--radius);margin-top:1rem">
-        <p>Unable to load projects. Please try again later.</p>
+    </section>
+
+    
+    <footer class="main-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-name">tejas<span>.</span>dev</div>
+          <p>Web developer & robotics student from Gujarat, India.</p>
+        </div>
+        <a href="#" class="footer-spotify"><i class="fab fa-spotify spotify-ico"></i>
+          <div class="spotify-text"><strong>Not Playing</strong>Spotify</div>
+        </a>
+        <div class="footer-links-grid">
+          <div class="footer-col"><span class="footer-col-title">Pages</span><a href="#about-me">About</a><a
+              href="contact.html">Contact</a><a href="projects.html">Projects</a></div>
+          <div class="footer-col"><span class="footer-col-title">Social</span><a href="https://instagram.com/tejasmmali"
+              target="_blank">Instagram</a><a href="https://x.com/tejasmmali" target="_blank">X / Twitter</a><a
+              href="https://github.com/tejasmmali" target="_blank">GitHub</a><a
+              href="https://linkedin.com/in/tejasmmali" target="_blank">LinkedIn</a></div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="main-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="brand-name">tejas<span>.</span>dev</div>
-        <p>Web developer & robotics student from Gujarat, India.</p>
+      <div style="max-width:1100px;margin:0 auto">
+        <div class="footer-bottom">
+          <p>© 2026 Tejas Mali — Proudly Made in India 🇮🇳</p><span class="temp-badge" id="tempBadge">🌡 14.7°C</span>
+        </div>
+        <div class="footer-rainbow"></div>
       </div>
-      <a href="#" class="footer-spotify"><i class="fab fa-spotify spotify-ico"></i>
-        <div class="spotify-text"><strong>Not Playing</strong>Spotify</div>
-      </a>
-      <div class="footer-links-grid">
-        <div class="footer-col"><span class="footer-col-title">Pages</span><a href="#about-me">About</a><a
-            href="contact.html">Contact</a><a href="projects.html">Projects</a></div>
-        <div class="footer-col"><span class="footer-col-title">Social</span><a href="https://instagram.com/tejasmmali"
-            target="_blank">Instagram</a><a href="https://x.com/tejasmmali" target="_blank">X / Twitter</a><a
-            href="https://github.com/tejasmmali" target="_blank">GitHub</a><a href="https://linkedin.com/in/tejasmmali"
-            target="_blank">LinkedIn</a></div>
-      </div>
-    </div>
-    <div style="max-width:1100px;margin:0 auto">
-      <div class="footer-bottom">
-        <p>© 2026 Tejas Mali — Proudly Made in India 🇮🇳</p><span class="temp-badge" id="tempBadge">🌡 14.7°C</span>
-      </div>
-      <div class="footer-rainbow"></div>
-    </div>
-  </footer>
+    </footer>
+<script
+data-name="BMC-Widget"
+src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+data-id="tejasmmali"
+data-description="Support me on Buy me a coffee!"
+data-message=""
+data-color="#40DCA5"
+data-position="Right"
+data-x_margin="18"
+data-y_margin="18">
+</script>
+    <script src="/js/temprature.js"></script>
+<script>
+(function() {
 
-  <script>
+  const CFG = {
+    color:         '#00e5a0',   
+    maxOpacity:    0.18,
+    flickerChance: 0.12,
+    squareSize:    4,
+    gridGap:       6,
+  };
+ 
+ 
+  function toRGBAPrefix(color) {
+    const c = document.createElement('canvas');
+    c.width = c.height = 1;
+    const ctx = c.getContext('2d');
+    if (!ctx) return 'rgba(0,229,160,';
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, 1, 1);
+    const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+    return 'rgba(' + r + ',' + g + ',' + b + ',';
+  }
+ 
+  const canvas    = document.getElementById('flickerCanvas');
+  const container = canvas.parentElement;  
+  const ctx       = canvas.getContext('2d');
+  const colorPfx  = toRGBAPrefix(CFG.color);
+ 
+  let cols, rows, squares, dpr;
+  let rafId    = null;
+  let lastTime = 0;
+  let inView   = false;
+ 
 
-const techData = {
+  function setup() {
+    const W = container.clientWidth;
+    const H = container.clientHeight;
+    dpr = window.devicePixelRatio || 1;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+ 
+    cols = Math.floor(W / (CFG.squareSize + CFG.gridGap));
+    rows = Math.floor(H / (CFG.squareSize + CFG.gridGap));
+    squares = new Float32Array(cols * rows);
+    for (let i = 0; i < squares.length; i++) {
+      squares[i] = Math.random() * CFG.maxOpacity;
+    }
+  }
+ 
 
-  row1: [
-    { name: "HTML5", icon: "https://cdn.simpleicons.org/html5", bg:"#E34F26"},
-    { name: "CSS3", icon: "https://img.icons8.com/ios-filled/100/css3.png", bg:"#1572B6"},
-    { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript", bg:"#323330"},
-    { name: "Python", icon: "https://cdn.simpleicons.org/python", bg:"#3776AB"},
-    { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel", bg:"#000000"},
-    { name: "Render", icon: "https://cdn.simpleicons.org/render", bg:"#46E3B7"},
-    { name: "Git", icon: "https://cdn.simpleicons.org/git", bg:"#F05032"},
-    { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase", bg:"#FFCA28"}
-  ],
+  function update(dt) {
+    for (let i = 0; i < squares.length; i++) {
+      if (Math.random() < CFG.flickerChance * dt) {
+        squares[i] = Math.random() * CFG.maxOpacity;
+      }
+    }
+  }
+ 
 
-  row2: [
-    { name: "GitHub", icon: "https://cdn.simpleicons.org/github", bg:"#181717"},
-    { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify", bg:"#00C7B7"},
-    { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap", bg:"#7952B3"},
-    { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress", bg:"#21759B"},
-    { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript", bg:"#3178C6"},
-    { name: "React", icon: "https://cdn.simpleicons.org/react", bg:"#20232A"},
-    { name: "Canva", icon: "https://img.icons8.com/ios-filled/100/canva-app.png", bg:"#00C4CC"}
-  ],
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        const op = squares[i * rows + j];
+        ctx.fillStyle = colorPfx + op + ')';
+        ctx.fillRect(
+          i * (CFG.squareSize + CFG.gridGap) * dpr,
+          j * (CFG.squareSize + CFG.gridGap) * dpr,
+          CFG.squareSize * dpr,
+          CFG.squareSize * dpr
+        );
+      }
+    }
+  }
+ 
+  // animate loop
+  function animate(time) {
+    if (!inView) return;
+    const dt = lastTime ? (time - lastTime) / 1000 : 0.016;
+    lastTime = time;
+    update(dt);
+    draw();
+    rafId = requestAnimationFrame(animate);
+  }
+ 
+  function startAnim() {
+    if (rafId) return;
+    lastTime = 0;
+    rafId = requestAnimationFrame(animate);
+  }
+  function stopAnim() {
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+ 
+  
+  new ResizeObserver(() => { setup(); }).observe(container);
+ 
+  
+  new IntersectionObserver(([entry]) => {
+    inView = entry.isIntersecting;
+    if (inView) startAnim(); else stopAnim();
+  }, { threshold: 0 }).observe(canvas);
+ 
+  // initial setup
+  setup();
+})();
+ </script>
 
-  row3: [
-    { name: "Arduino", icon: "https://cdn.simpleicons.org/arduino", bg:"#00979D"},
-    { name: "Notion", icon: "https://cdn.simpleicons.org/notion", bg:"#000000"},
-    { name: "Raspberry Pi", icon: "https://cdn.simpleicons.org/raspberrypi", bg:"#A22846"},
-    { name: "Blender", icon: "https://cdn.simpleicons.org/blender", bg:"#F5792A"},
-    { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs", bg:"#000000"},
-    { name: "Discord", icon: "https://cdn.simpleicons.org/discord", bg:"#5865F2"}
-  ]
+    <script>
+      const toggle = document.getElementById('menuToggle');
+      const mob = document.getElementById('mobileNav');
+      const icon = document.getElementById('menuIcon');
 
-};
+      toggle.addEventListener('click', () => {
+        mob.classList.toggle('open');
+        icon.className = mob.classList.contains('open')
+          ? 'fas fa-times'
+          : 'fas fa-bars';
+      });
+
+      mob.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => {
+          mob.classList.remove('open');
+          icon.className = 'fas fa-bars';
+        })
+      );
+      const techData = {
+
+        row1: [
+          { name: "HTML5", icon: "https://cdn.simpleicons.org/html5", bg: "#E34F26" },
+          { name: "CSS3", icon: "https://img.icons8.com/ios-filled/100/css3.png", bg: "#1572B6" },
+          { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript", bg: "#323330" },
+          { name: "Python", icon: "https://cdn.simpleicons.org/python", bg: "#3776AB" },
+          { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel", bg: "#000000" },
+          { name: "Render", icon: "https://cdn.simpleicons.org/render", bg: "#46E3B7" },
+          { name: "Git", icon: "https://cdn.simpleicons.org/git", bg: "#F05032" },
+          { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase", bg: "#FFCA28" }
+        ],
+
+        row2: [
+          { name: "GitHub", icon: "https://cdn.simpleicons.org/github", bg: "#181717" },
+          { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify", bg: "#00C7B7" },
+          { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap", bg: "#7952B3" },
+          { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress", bg: "#21759B" },
+          { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript", bg: "#3178C6" },
+          { name: "React", icon: "https://cdn.simpleicons.org/react", bg: "#20232A" },
+          { name: "Canva", icon: "https://img.icons8.com/ios-filled/100/canva-app.png", bg: "#00C4CC" }
+        ],
+
+        row3: [
+          { name: "Arduino", icon: "https://cdn.simpleicons.org/arduino", bg: "#00979D" },
+          { name: "Notion", icon: "https://cdn.simpleicons.org/notion", bg: "#000000" },
+          { name: "Raspberry Pi", icon: "https://cdn.simpleicons.org/raspberrypi", bg: "#A22846" },
+          { name: "Blender", icon: "https://cdn.simpleicons.org/blender", bg: "#F5792A" },
+          { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs", bg: "#000000" },
+          { name: "Discord", icon: "https://cdn.simpleicons.org/discord", bg: "#5865F2" }
+        ]
+
+      };
 
 
 
-function buildRow(id, data) {
+      function buildRow(id, data) {
 
-  const el = document.getElementById(id);
+        const el = document.getElementById(id);
 
-  [...data, ...data].forEach(t => {
+        [...data, ...data].forEach(t => {
 
-    const d = document.createElement("div");
+          const d = document.createElement("div");
 
-    d.className = "tech-badge";
-    d.style.background = t.bg;
+          d.className = "tech-badge";
+          d.style.background = t.bg;
 
-    d.innerHTML =
-      `<img src="${t.icon}" alt="${t.name}">
+          d.innerHTML =
+            `<img src="${t.icon}" alt="${t.name}">
        <span>${t.name}</span>`;
 
-    el.appendChild(d);
+          el.appendChild(d);
 
-  });
+        });
 
-}
+      }
 
-buildRow("row1", techData.row1);
-buildRow("row2", techData.row2);
-buildRow("row3", techData.row3);
-
-
-
-const obs = new IntersectionObserver(entries => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      entry.target.classList.add("visible");
-      obs.unobserve(entry.target);
-
-    }
-
-  });
-
-}, { threshold: 0.1 });
-
-document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+      buildRow("row1", techData.row1);
+      buildRow("row2", techData.row2);
+      buildRow("row3", techData.row3);
 
 
 
-async function loadProjects() {
+      const obs = new IntersectionObserver(entries => {
 
-  try {
+        entries.forEach(entry => {
 
-    const r = await fetch(
-      "https://api.github.com/users/tejasmmali/repos?sort=updated&per_page=6"
-    );
+          if (entry.isIntersecting) {
 
-    if (!r.ok) throw new Error();
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
 
-    const repos = await r.json();
+          }
 
-    document.getElementById("projects-loading").style.display = "none";
+        });
 
-    const g = document.getElementById("projects-container");
+      }, { threshold: 0.1 });
 
-    const langColors = {
-      JavaScript: "#f1e05a",
-      Python: "#3572A5",
-      HTML: "#e34c26",
-      CSS: "#563d7c",
-      TypeScript: "#2b7489",
-      Shell: "#89e051"
-    };
+      document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 
-    repos.forEach(repo => {
 
-      const card = document.createElement("div");
 
-      card.className = "project-card";
+      async function loadProjects() {
 
-      card.innerHTML = `
+        try {
+
+          const r = await fetch(
+            "https://api.github.com/users/tejasmmali/repos?sort=updated&per_page=6"
+          );
+
+          if (!r.ok) throw new Error();
+
+          const repos = await r.json();
+
+          document.getElementById("projects-loading").style.display = "none";
+
+          const g = document.getElementById("projects-container");
+
+          const langColors = {
+            JavaScript: "#f1e05a",
+            Python: "#3572A5",
+            HTML: "#e34c26",
+            CSS: "#563d7c",
+            TypeScript: "#2b7489",
+            Shell: "#89e051"
+          };
+
+          repos.forEach(repo => {
+
+            const card = document.createElement("div");
+
+            card.className = "project-card";
+
+            card.innerHTML = `
         <div class="project-header">
-          <h3 class="project-title">${repo.name.replace(/-/g," ")}</h3>
+          <h3 class="project-title">${repo.name.replace(/-/g, " ")}</h3>
           <i class="fas fa-folder-open" style="color:var(--muted)"></i>
         </div>
 
@@ -414,21 +574,21 @@ async function loadProjects() {
         </div>
       `;
 
-      g.appendChild(card);
+            g.appendChild(card);
 
-    });
+          });
 
-  } catch {
+        } catch {
 
-    document.getElementById("projects-loading").style.display = "none";
-    document.getElementById("projects-error").style.display = "block";
+          document.getElementById("projects-loading").style.display = "none";
+          document.getElementById("projects-error").style.display = "block";
 
-  }
+        }
 
-}
+      }
 
-loadProjects();
-  </script>
+      loadProjects();
+    </script>
 </body>
 
 </html>

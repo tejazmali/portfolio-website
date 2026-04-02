@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Display projects
+           
             projectsContainer.innerHTML = projects.map(repo => `
                 <div class="project-card">
                     <div class="project-header">
@@ -67,6 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize
+   
     fetchGitHubProjects();
 });
