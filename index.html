@@ -13,720 +13,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/main.css">
+
   <style>
-    /* ── HERO ── */
-    .hero-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem) 1rem;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(0, 229, 160, .08);
-      border: 1px solid rgba(0, 229, 160, .2);
-      color: var(--accent);
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: .35rem .9rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
-    }
-
-    .eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1)
-      }
-
-      50% {
-        opacity: .5;
-        transform: scale(.8)
-      }
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-heading {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      color: var(--white);
-      margin-bottom: .75rem;
-    }
-
-    .hero-heading .accent {
-      color: var(--accent);
-    }
-
-    .hero-heading .accent2 {
-      color: var(--accent2);
-    }
-
-    .hero-role {
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .hero-description {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-avatar {
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .avatar-wrap {
-      width: clamp(160px, 20vw, 260px);
-      height: clamp(160px, 20vw, 260px);
-      position: relative;
-    }
-
-    .avatar-bg-ring {
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: conic-gradient(var(--accent), var(--accent2), var(--accent));
-      animation: spin-slow 8s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes spin-slow {
-      to {
-        transform: rotate(360deg)
-      }
-    }
-
-    .avatar-bg-ring-inner {
-      position: absolute;
-      inset: 3px;
-      border-radius: 50%;
-      background: var(--bg);
-      z-index: 1;
-    }
-
-    .avatar-img {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: top center;
-      image-rendering: pixelated;
-      filter: drop-shadow(0 0 20px rgba(0, 229, 160, .25));
-    }
-
-    .avatar-pixel-glow {
-      position: absolute;
-      inset: -2px;
-      border-radius: 50%;
-      background: transparent;
-      border: 2px solid rgba(0, 229, 160, .15);
-      z-index: 3;
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes glow-pulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 160, .2)
-      }
-
-      50% {
-        box-shadow: 0 0 0 12px rgba(0, 229, 160, .0)
-      }
-    }
-
-    .social-links {
-      display: flex;
-      gap: .6rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: var(--r-sm);
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      text-decoration: none;
-      transition: all var(--ease);
-      font-size: .9rem;
-    }
-
-    .social-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(0, 229, 160, .07);
-      transform: translateY(-2px);
-    }
-
-    /* ── TECH BADGES ── */
-    .tech-logos-section {
-      margin: 3rem 0 0;
-      padding: 2rem 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .tech-logos-section::before,
-    .tech-logos-section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .tech-logos-section::before {
-      left: 0;
-      background: linear-gradient(to right, var(--bg), transparent);
-    }
-
-    .tech-logos-section::after {
-      right: 0;
-      background: linear-gradient(to left, var(--bg), transparent);
-    }
-
-    .tech-scroll-wrapper {
-      overflow: hidden;
-      margin-bottom: .65rem;
-    }
-
-    .tech-scroll-row {
-      display: flex;
-      gap: .65rem;
-      width: fit-content;
-    }
-
-    .tech-scroll-right {
-      animation: scroll-right 38s linear infinite;
-    }
-
-    .tech-scroll-left {
-      animation: scroll-left 38s linear infinite;
-    }
-
-    @keyframes scroll-right {
-      to {
-        transform: translateX(-50%)
-      }
-    }
-
-    @keyframes scroll-left {
-      from {
-        transform: translateX(-50%)
-      }
-
-      to {
-        transform: translateX(0)
-      }
-    }
-
-    .tech-badge {
-      display: flex;
-      align-items: center;
-      gap: .55rem;
-      padding: .5rem 1rem;
-      border-radius: 100px;
-      font-size: .72rem;
-      font-weight: 700;
-      white-space: nowrap;
-      flex-shrink: 0;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, .12);
-      transition: transform var(--ease);
-    }
-
-    .tech-badge:hover {
-      transform: scale(1.04);
-    }
-
-    .tech-badge svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    /* ── QUOTE ── */
-    .quote-section {
-      text-align: center;
-      padding: 4rem clamp(1rem, 4vw, 3rem);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .quote-mark {
-      font-family: Georgia, serif;
-      font-size: 5rem;
-      color: var(--accent);
-      opacity: .15;
-      line-height: .6;
-      display: block;
-      margin-bottom: .5rem;
-    }
-
-    .quote-text {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.5rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.25;
-    }
-
-    .quote-author {
-      display: block;
-      color: var(--muted);
-      font-size: .9rem;
-      margin-top: 1rem;
-    }
-
-    /* ── CONTENT SECTIONS ── */
-    .content-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem clamp(1rem, 4vw, 3rem) 3rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .about-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: border-color var(--ease), transform var(--ease);
-    }
-
-    .about-card:hover {
-      border-color: rgba(0, 229, 160, .25);
-      transform: translateY(-3px);
-    }
-
-    .about-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: .75rem;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    .about-card h3 .icon {
-      color: var(--accent);
-    }
-
-    .about-card p {
-      font-size: .9rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .about-card.wide {
-      grid-column: 1/-1;
-    }
-
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      list-style: none;
-      margin-top: 1.5rem;
-    }
-
-    .skill-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      transition: border-color var(--ease);
-    }
-
-    .skill-item:hover {
-      border-color: rgba(124, 109, 250, .4);
-    }
-
-    .skill-item strong {
-      color: var(--accent2);
-      display: block;
-      margin-bottom: .3rem;
-      font-size: .9rem;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .skill-item span {
-      font-size: .875rem;
-      color: var(--muted);
-    }
-
-    .education-timeline {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .education-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      display: flex;
-      gap: 1.25rem;
-      transition: border-color var(--ease);
-    }
-
-    .education-item:hover {
-      border-color: rgba(0, 229, 160, .25);
-    }
-
-    .edu-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .edu-icon.green {
-      background: rgba(0, 229, 160, .12);
-      color: var(--accent);
-    }
-
-    .edu-icon.purple {
-      background: rgba(124, 109, 250, .12);
-      color: var(--accent2);
-    }
-
-    .edu-body h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: .2rem;
-    }
-
-    .edu-degree {
-      font-size: .85rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: .15rem;
-    }
-
-    .edu-period {
-      font-size: .78rem;
-      color: var(--muted);
-      margin-bottom: .6rem;
-    }
-
-    .edu-desc {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .timeline-container {
-      margin-top: 1.5rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
-      border-radius: 2px;
-    }
-
-    .timeline-year-group {
-      margin-bottom: 2rem;
-    }
-
-    .year-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .year-label::before {
-      content: '';
-      position: absolute;
-      left: -1.875rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      border: 2px solid var(--bg);
-      box-shadow: 0 0 0 3px rgba(0, 229, 160, .2);
-    }
-
-    .timeline-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: .75rem;
-      transition: border-color var(--ease);
-    }
-
-    .timeline-item:hover {
-      border-color: rgba(0, 229, 160, .2);
-    }
-
-    .timeline-item h4 {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: .4rem;
-    }
-
-    .timeline-item p {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .see-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      margin-top: 1rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: .875rem;
-      font-weight: 600;
-      padding: .5rem 1rem;
-      border: 1px solid rgba(0, 229, 160, .2);
-      border-radius: var(--r-sm);
-      transition: all var(--ease);
-    }
-
-    .see-more-btn:hover {
-      background: rgba(0, 229, 160, .07);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-section {
-      background: var(--surface);
-      padding: 3rem 0;
-      margin-top: 2rem;
-    }
-
-    .projects-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 3rem);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-      transition: all var(--ease);
-    }
-
-    .project-card:hover {
-      border-color: rgba(0, 229, 160, .25);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, .3);
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .project-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      text-transform: capitalize;
-    }
-
-    .project-desc {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.7;
-      flex: 1;
-    }
-
-    .project-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: .75rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .project-lang {
-      font-size: .75rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: .35rem;
-    }
-
-    .lang-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .project-link {
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: .3rem;
-      transition: gap var(--ease);
-    }
-
-    .project-link:hover {
-      gap: .6rem;
-    }
-
-    .project-stars {
-      display: flex;
-      align-items: center;
-      gap: .25rem;
-      font-size: .75rem;
-      color: var(--muted);
-    }
-
-    .projects-loading {
-      text-align: center;
-      padding: 4rem;
-      color: var(--muted);
-    }
-
-    .loading-spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin .9s linear infinite;
-      margin: 0 auto 1rem;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg)
-      }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media(max-width:768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem
-      }
-
-      .hero-avatar {
-        order: -1;
-        display: flex;
-        justify-content: center
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr
-      }
-
-      .about-card.wide {
-        grid-column: 1
-      }
-
-      .education-item {
-        flex-direction: column
-      }
-
-      .hero-actions {
-        flex-direction: column
-      }
-
-      .hero-actions a {
-        text-align: center;
-        justify-content: center
-      }
-    }
+ 
   </style>
 </head>
 
@@ -985,79 +275,159 @@
   </footer>
 
   <script>
-    // Mobile menu
-    const toggle = document.getElementById('menuToggle'), mob = document.getElementById('mobileNav'), icon = document.getElementById('menuIcon');
-    toggle.addEventListener('click', () => { mob.classList.toggle('open'); icon.className = mob.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars' });
-    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mob.classList.remove('open'); icon.className = 'fas fa-bars' }));
 
-    // Tech badges
-    const techData = {
-      row1: [
-        { name: 'HTML5', bg: '#E34F26', svg: '<path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622h10.125l-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.955-.81-.188-2.11H6.64l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>' },
-        { name: 'CSS3', bg: '#1572B6', svg: '<path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622h10.125l-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.955-.81-.188-2.11H6.64l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>' },
-        { name: 'JavaScript', bg: '#323330', svg: '<path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.77-.875-1.98-1.275-3.846-1.275-2.61 0-4.755 1.365-5.865 3.63-.52 1.125-.585 2.25-.24 3.345.405 1.26 1.425 2.25 2.46 2.94 1.08.72 2.34 1.08 3.57 1.32.39.12.75.24 1.08.405.33.18.585.42.75.705.24.42.24.84.18 1.26-.09.66-.51 1.14-1.17 1.35-.585.21-1.305.24-1.89.06-.585-.18-1.02-.585-1.32-1.14-.24-.42-.36-.9-.36-1.38l-1.755.09c.03.66.15 1.32.45 1.89.36.705 1.02 1.275 1.755 1.65.75.36 1.59.51 2.43.51 1.89 0 3.36-.66 4.275-1.89.585-.705.915-1.59 1.05-2.505.12-.84.09-1.68-.09-2.505z"/>' },
-        { name: 'Python', bg: '#3776AB', svg: '<path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05 1.07.13z"/>' },
-        { name: 'Vercel', bg: '#000', svg: '<path d="M24 22.525H0l12-21.05 12 21.05z"/>' },
-        { name: 'Render', bg: '#46E3B7', svg: '<path d="M18.15 0H5.85C2.6 0 0 2.6 0 5.85v12.3C0 21.4 2.6 24 5.85 24h12.3C21.4 24 24 21.4 24 18.15V5.85C24 2.6 21.4 0 18.15 0zm-6.15 18.75c-1.5 0-2.7-1.2-2.7-2.7s1.2-2.7 2.7-2.7 2.7 1.2 2.7 2.7-1.2 2.7-2.7 2.7zm0-9c-1.5 0-2.7-1.2-2.7-2.7s1.2-2.7 2.7-2.7 2.7 1.2 2.7 2.7-1.2 2.7-2.7 2.7z"/>' },
-        { name: 'Git', bg: '#F05032', svg: '<path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85-.15 1.7.25 2.5l-2.4 2.4c-.83-.4-1.66-.5-2.5-.25L2.6 10.59zm19.65 2.82l-5.78 5.78-1.69-1.69c.24-.85.15-1.7-.25-2.5l2.4-2.4c.83.4 1.66.5 2.5.25l1.69 1.69zm-1.6-6.9c.4-.83.5-1.66.25-2.5l-1.69-1.69-5.78 5.78 1.69 1.69c.85-.24 1.7-.15 2.5.25l2.4-2.4zm-14.1 9.8l5.78-5.78 1.69 1.69c-.85.24-1.7.15-2.5-.25l-2.4 2.4c.83.4 1.66.5 2.5.25l1.69 1.69zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0z"/>' },
-        { name: 'Firebase', bg: '#039BE5', svg: '<path d="M3.89 15.672L6.255.461A.896.896 0 017.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.9.9 0 00-.515-.7L11.25 2.268l2.543 4.771zm-14.7 1.54l-1.123-5.784L11.435 24l2.69-4.752H8.99zm9.867-4.83l-6.96.98 4.543 4.463 2.417-5.443z"/>' },
-      ],
-      row2: [
-        { name: 'GitHub', bg: '#181717', svg: '<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>' },
-        { name: 'Netlify', bg: '#00C7B7', svg: '<path d="M6.27 0L1.045 12 6.27 24h11.46L22.955 12 17.73 0H6.27zm.81 1h9.84l4.81 11-4.81 11H7.08L2.27 12 7.08 1z"/>' },
-        { name: 'Bootstrap', bg: '#8511FA', svg: '<path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.956v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.325-1.663zM24 11.39v1.218C24 18.281 18.281 24 11.607 24H11.39C5.352 24 0 18.794 0 12.613v-.244C0 5.69 5.419 0 12.15 0c6.489 0 11.85 5.39 11.85 11.39z"/>' },
-        { name: 'WordPress', bg: '#21759B', svg: '<path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 1.5c2.33 0 4.456.865 6.078 2.278L4.778 18.078A8.462 8.462 0 013.5 12c0-4.687 3.813-8.5 8.5-8.5zm0 17c-2.33 0-4.456-.865-6.078-2.278L19.222 5.922A8.462 8.462 0 0120.5 12c0 4.687-3.813 8.5-8.5 8.5z"/>' },
-        { name: 'TypeScript', bg: '#3178C6', svg: '<path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111v2.458a3.95 3.95 0 00-.643-.361 5.093 5.093 0 00-.717-.26 5.453 5.453 0 00-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 00-.623.242c-.17.104-.3.229-.393.374a.888.888 0 00-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 01-1.012 1.085 4.38 4.38 0 01-1.487.596 9.916 9.916 0 01-1.84.164 5.544 5.544 0 01-1.512-.493v-2.63a5.033 5.033 0 003.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 00-.074-1.089 2.12 2.12 0 00-.537-.5 5.597 5.597 0 00-.807-.444 27.72 27.72 0 00-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 011.47-.629 7.536 7.536 0 011.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>' },
-        { name: 'React', bg: '#61DAFB', svg: '<path d="M14.23 12.004a2.236 2.236 0 01-2.235 2.236 2.236 2.236 0 01-2.236-2.236 2.236 2.236 0 012.235-2.236 2.236 2.236 0 012.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 00-1.092-.278z"/>' },
-        { name: 'Canva', bg: '#00C4CC', svg: '<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.388 13.396c-.476 1.064-1.298 1.68-2.309 1.68-.73 0-1.353-.307-1.747-.84-.353.507-.921.84-1.614.84-1.323 0-2.287-1.073-2.287-2.55 0-1.68 1.116-2.998 2.607-2.998.553 0 1.055.188 1.43.536V9.9h1.244v3.342c0 .536.23.84.668.84.63 0 1.15-.667 1.15-1.694 0-1.946-1.437-3.287-3.537-3.287-2.213 0-3.803 1.588-3.803 3.784 0 2.136 1.497 3.57 3.727 3.57 1.01 0 1.91-.307 2.576-.9l.652.75c-.822.745-1.997 1.17-3.274 1.17-2.845 0-4.923-1.942-4.923-4.59 0-2.706 2.078-4.74 4.853-4.74 2.76 0 4.684 1.824 4.684 4.434 0 .537-.077 1.03-.297 1.527z"/>' },
-      ],
-      row3: [
-        { name: 'Arduino', bg: '#00979D', svg: '<path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm0 21.6C6.702 21.6 2.4 17.298 2.4 12S6.702 2.4 12 2.4 21.6 6.702 21.6 12 17.298 21.6 12 21.6zm-3.6-8.4v1.6H5.6v-1.6h2.8zm0-2.4v1.6H5.6v-1.6h2.8zm6.8 2.4v1.6H12v-1.6h3.2zm0-2.4v1.6H12v-1.6h3.2z"/>' },
-        { name: 'Notion', bg: '#000', svg: '<path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466l1.823 1.447zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.606c.093.42 0 .841-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .841-1.168.841l-3.222.186c-.093-.186 0-.653.327-.746l.841-.233V9.298L7.822 9.44c-.094.42-.14.84.14.933l3.082 4.764v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933l4.577-.326z"/>' },
-        { name: 'Raspberry Pi', bg: '#C51A4A', svg: '<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6C6.702 21.6 2.4 17.298 2.4 12S6.702 2.4 12 2.4 21.6 6.702 21.6 12 17.298 21.6 12 21.6zm-1.2-14.4a2.4 2.4 0 110 4.8 2.4 2.4 0 010-4.8zm2.4 0a2.4 2.4 0 110 4.8 2.4 2.4 0 010-4.8zM12 10.8a4.8 4.8 0 00-4.8 4.8v1.2h9.6v-1.2a4.8 4.8 0 00-4.8-4.8z"/>' },
-        { name: 'Blender', bg: '#F5792A', svg: '<path d="M12.51 13.214c.046-.8.438-1.538 1.03-2.086a3.44 3.44 0 012.373-.892c.46.003.913.098 1.342.28a3.513 3.513 0 011.885 1.952c.177.464.252.958.22 1.448a3.51 3.51 0 01-.396 1.4 3.49 3.49 0 01-2.12 1.656 3.484 3.484 0 01-2.63-.278 3.518 3.518 0 01-1.61-1.927 3.512 3.512 0 01-.094-1.553zM19.12 12.654c0-.015-.007-.027-.008-.041l-.013-.103c-.198-1.37-.898-2.695-2.002-3.677a5.765 5.765 0 00-.227-.19l4.163-6.438-2.639-1.68L12.59.002 6.05.008 0 3.761l6.738 9.321a5.765 5.765 0 00-.08.765 5.84 5.84 0 00.592 2.925 5.809 5.809 0 002.17 2.317 5.801 5.801 0 008.806-5.787 5.785 5.785 0 00-.098-1.518z"/>' },
-        { name: 'Next.js', bg: '#000', svg: '<path d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3073-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.659-.108.8537-.108 1.7474.0006.9461.0139 1.1097.1076 1.7785.637 4.4498 3.7986 8.2214 8.069 9.6218.7679.2486 1.5732.418 2.4923.5303.3395.0425 1.8062.0425 2.1454 0 1.5059-.1875 2.7802-.6116 4.0053-1.3073l-6.7151-9.4987V9.9l4.9-7.4041A11.9543 11.9543 0 0011.5725 0z"/>' },
-        { name: 'Discord', bg: '#5865F2', svg: '<path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/>' },
-      ]
+const techData = {
+
+  row1: [
+    { name: "HTML5", icon: "https://cdn.simpleicons.org/html5", bg:"#E34F26"},
+    { name: "CSS3", icon: "https://img.icons8.com/ios-filled/100/css3.png", bg:"#1572B6"},
+    { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript", bg:"#323330"},
+    { name: "Python", icon: "https://cdn.simpleicons.org/python", bg:"#3776AB"},
+    { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel", bg:"#000000"},
+    { name: "Render", icon: "https://cdn.simpleicons.org/render", bg:"#46E3B7"},
+    { name: "Git", icon: "https://cdn.simpleicons.org/git", bg:"#F05032"},
+    { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase", bg:"#FFCA28"}
+  ],
+
+  row2: [
+    { name: "GitHub", icon: "https://cdn.simpleicons.org/github", bg:"#181717"},
+    { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify", bg:"#00C7B7"},
+    { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap", bg:"#7952B3"},
+    { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress", bg:"#21759B"},
+    { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript", bg:"#3178C6"},
+    { name: "React", icon: "https://cdn.simpleicons.org/react", bg:"#20232A"},
+    { name: "Canva", icon: "https://img.icons8.com/ios-filled/100/canva-app.png", bg:"#00C4CC"}
+  ],
+
+  row3: [
+    { name: "Arduino", icon: "https://cdn.simpleicons.org/arduino", bg:"#00979D"},
+    { name: "Notion", icon: "https://cdn.simpleicons.org/notion", bg:"#000000"},
+    { name: "Raspberry Pi", icon: "https://cdn.simpleicons.org/raspberrypi", bg:"#A22846"},
+    { name: "Blender", icon: "https://cdn.simpleicons.org/blender", bg:"#F5792A"},
+    { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs", bg:"#000000"},
+    { name: "Discord", icon: "https://cdn.simpleicons.org/discord", bg:"#5865F2"}
+  ]
+
+};
+
+
+
+function buildRow(id, data) {
+
+  const el = document.getElementById(id);
+
+  [...data, ...data].forEach(t => {
+
+    const d = document.createElement("div");
+
+    d.className = "tech-badge";
+    d.style.background = t.bg;
+
+    d.innerHTML =
+      `<img src="${t.icon}" alt="${t.name}">
+       <span>${t.name}</span>`;
+
+    el.appendChild(d);
+
+  });
+
+}
+
+buildRow("row1", techData.row1);
+buildRow("row2", techData.row2);
+buildRow("row3", techData.row3);
+
+
+
+const obs = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add("visible");
+      obs.unobserve(entry.target);
+
+    }
+
+  });
+
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+
+
+async function loadProjects() {
+
+  try {
+
+    const r = await fetch(
+      "https://api.github.com/users/tejasmmali/repos?sort=updated&per_page=6"
+    );
+
+    if (!r.ok) throw new Error();
+
+    const repos = await r.json();
+
+    document.getElementById("projects-loading").style.display = "none";
+
+    const g = document.getElementById("projects-container");
+
+    const langColors = {
+      JavaScript: "#f1e05a",
+      Python: "#3572A5",
+      HTML: "#e34c26",
+      CSS: "#563d7c",
+      TypeScript: "#2b7489",
+      Shell: "#89e051"
     };
-    function buildRow(id, data) {
-      const el = document.getElementById(id);
-      [...data, ...data].forEach(t => {
-        const d = document.createElement('div');
-        d.className = 'tech-badge';
-        d.style.background = t.bg;
-        d.innerHTML = '<svg viewBox="0 0 24 24" fill="white">' + t.svg + '</svg><span>' + t.name + '</span>';
-        el.appendChild(d);
-      });
-    }
-    buildRow('row1', techData.row1);
-    buildRow('row2', techData.row2);
-    buildRow('row3', techData.row3);
 
-    // Scroll reveal
-    const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target) } }), { threshold: .1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    repos.forEach(repo => {
 
-    // Projects
-    async function loadProjects() {
-      try {
-        const r = await fetch('https://api.github.com/users/tejasmmali/repos?sort=updated&per_page=6');
-        if (!r.ok) throw new Error();
-        const repos = await r.json();
-        document.getElementById('projects-loading').style.display = 'none';
-        const g = document.getElementById('projects-container');
-        const lc = { JavaScript: '#f1e05a', Python: '#3572A5', HTML: '#e34c26', CSS: '#563d7c', TypeScript: '#2b7489', Shell: '#89e051' };
-        repos.forEach(repo => {
-          const c = document.createElement('div'); c.className = 'project-card';
-          c.innerHTML = '<div class="project-header"><h3 class="project-title">' + repo.name.replace(/-/g, ' ') + '</h3><i class="fas fa-folder-open" style="color:var(--muted)"></i></div><p class="project-desc">' + (repo.description || 'No description provided.') + '</p><div class="project-footer"><span class="project-lang"><span class="lang-dot" style="background:' + (lc[repo.language] || 'var(--accent)') + '"></span>' + (repo.language || 'Code') + '</span><a href="' + repo.html_url + '" target="_blank" class="project-link">View Repo <i class="fas fa-arrow-right"></i></a></div>';
-          g.appendChild(c);
-        });
-      } catch {
-        document.getElementById('projects-loading').style.display = 'none';
-        document.getElementById('projects-error').style.display = 'block';
-      }
-    }
-    loadProjects();
+      const card = document.createElement("div");
+
+      card.className = "project-card";
+
+      card.innerHTML = `
+        <div class="project-header">
+          <h3 class="project-title">${repo.name.replace(/-/g," ")}</h3>
+          <i class="fas fa-folder-open" style="color:var(--muted)"></i>
+        </div>
+
+        <p class="project-desc">
+          ${repo.description || "No description provided."}
+        </p>
+
+        <div class="project-footer">
+
+          <span class="project-lang">
+            <span class="lang-dot"
+            style="background:${langColors[repo.language] || "var(--accent)"}"></span>
+            ${repo.language || "Code"}
+          </span>
+
+          <a href="${repo.html_url}" target="_blank" class="project-link">
+            View Repo <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+      `;
+
+      g.appendChild(card);
+
+    });
+
+  } catch {
+
+    document.getElementById("projects-loading").style.display = "none";
+    document.getElementById("projects-error").style.display = "block";
+
+  }
+
+}
+
+loadProjects();
   </script>
 </body>
 
