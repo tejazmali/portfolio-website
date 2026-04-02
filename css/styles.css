@@ -1,20 +1,3 @@
-/* Fix BuyMeACoffee popup window */
-#bmc-wbtn + div {
-  right: 20px !important;
-  bottom: 90px !important;
-  width: 380px !important;
-  height: 620px !important;
-  max-height: 80vh !important;
-  border-radius: 14px !important;
-  overflow: hidden !important;
-}
-
-/* Fix iframe inside popup */
-#bmc-wbtn + div iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 14px !important;
-}
 *,
 *::before,
 *::after {
